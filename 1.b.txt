@@ -1,0 +1,10 @@
+(function() {
+  var stringArray = ["sagar", "aniket", "yuvraj"];
+
+  var titleCapsArray = stringArray.map(function(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+
+  console.log("Original Array:", stringArray);
+  console.log("Title Caps Array:", titleCapsArray);
+})();
