@@ -1,31 +1,21 @@
 const readline = require("readline");
-
 const inp = readline.createInterface({
   input: process.stdin
 });
-
 const userInput = [];
-
 inp.on("line", (data) => {
   userInput.push(data);
 });
-
 inp.on("close", () => {
 function isPalindrome(str) {
-  // Helper function to check if a string is a palindrome
-  const reversedStr = str.split('').reverse().join('');
+ const reversedStr = str.split('').reverse().join('');
   return str === reversedStr;
 }
-
 function findPalindromesInArray(arr) {
-  // Function to find palindromes in an array
   const palindromes = arr.filter(item => isPalindrome(item));
   return palindromes;
 }
-
-// Example usage:
 const wordsArray = userInput[0].split(" ");
 const palindromesInArray = findPalindromesInArray(wordsArray);
-
 console.log(palindromesInArray);
 });
