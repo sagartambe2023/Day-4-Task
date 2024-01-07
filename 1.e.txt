@@ -1,0 +1,28 @@
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+var isPalindrome = function(str) {
+  const reversedStr = str.split('').reverse().join('');
+  return str === reversedStr;
+};
+
+function findPalindromesInArray(arr) {
+  const palindromes = arr.filter(item => isPalindrome(item));
+  return palindromes;
+}
+
+const wordsArray = userInput[0].split(" ");
+const palindromesInArray = findPalindromesInArray(wordsArray);
+
+console.log(palindromesInArray);
+});
