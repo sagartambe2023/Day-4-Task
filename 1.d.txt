@@ -32,7 +32,7 @@ function getPrimeNumbers(array) {
 const numbersArray = userInput[0].split(" ")
 const primeNumbers = getPrimeNumbers(numbersArray);
 
-console.log("Prime Numbers:", primeNumbers);
+console.log(primeNumbers);
 
  
 });
