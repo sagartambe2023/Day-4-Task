@@ -9,7 +9,7 @@ inp.on("line", (data) => {
   userInput.push(data);
 });
 inp.on("close", () => {
-function rotateArray(arr, k) {
+var rotateArray = function (arr, k) {
   const n = arr.length;
   k = k % n;
   const rotatedPart = arr.splice(0, n - k);
