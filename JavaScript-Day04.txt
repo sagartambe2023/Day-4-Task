@@ -39,7 +39,7 @@ let oddNumber=(a)=>{
     console.log(odd.join(' '))
     }
     oddNumber([1,2,3,4,5,6,7])
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 b.Convert all the strings to title caps in a string array
 Sample Input:
 Convert all the strings to title caps in a string array
@@ -74,7 +74,7 @@ let titleCaps=(arr) =>{
 	console.log( arr.join(' '));
 }
 titleCaps("convert all the strings to title caps in a string array")
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 c.Sum of all numbers in an array
 Sample Input:
 [1,2,3,4,5,6,7]
@@ -109,7 +109,7 @@ let titleCaps=(arr) =>{
     console.log(sum)
 }
 titleCaps([1,2,3,4,5,6,7])
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 d.Return all the prime numbers in an array
 Sample Input:
 [1,2,3,4,5,6,7]
@@ -164,7 +164,7 @@ function primeNumber(array) {
   })([1, 2, 3, 4, 5, 6, 7]);
   
   console.log(result);
-  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
 e.Return all the palindromes in an array
 Sample Input:
 ["abc", "aba", "dad", "bbc", "cbc"]
@@ -228,7 +228,7 @@ const PalindromStrings = ((arr, N) => {
 })(["abc", "aba", "dad", "bbc", "cbc"], 5);
 
 console.log(PalindromStrings);
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Return median of two sorted arrays of the same size
 
 Sample Input:
@@ -282,7 +282,7 @@ const medianFind = ((nums1, nums2) => {
 })([1, 2, 3], [4, 5, 6]);
 
 console.log(medianFind);
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 g.Remove duplicates from an array
 
 Sample Input:
@@ -332,7 +332,7 @@ const resultArray = ((arr) => {
 })(arr);
 
 console.log(resultArray);
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 h.Rotate an array by k times
 
 Sample Input:
