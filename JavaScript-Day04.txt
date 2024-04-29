@@ -1,1 +1,376 @@
+a.Print odd numbers in an array
+Sample Input:
+1 2 3 4 5 6 7
+Sample Output:
+1 3 5 7
 
+1.Regular Function:
+function oddNumber(a){
+    let odd=[]
+    for(i=0;i<a.length;i++){
+        if(a[i]%2!=0){
+            odd.push(a[i])
+        }
+    }
+    console.log(odd.join(' '))
+    }
+    oddNumber([1,2,3,4,5,6,7])
+
+2.IIFE:
+(function oddNumber(a){
+    let odd=[]
+    for(i=0;i<a.length;i++){
+        if(a[i]%2!=0){
+            odd.push(a[i])
+        }
+    }
+    console.log(odd.join(' '))
+    }
+)([1,2,3,4,5,6,7]);
+
+3.Arrow Function:
+let oddNumber=(a)=>{
+    let odd=[]
+    for(let i=0;i<a.length;i++){
+        if(a[i]%2!=0){
+            odd.push(a[i])
+        }
+    }
+    console.log(odd.join(' '))
+    }
+    oddNumber([1,2,3,4,5,6,7])
+
+b.Convert all the strings to title caps in a string array
+Sample Input:
+Convert all the strings to title caps in a string array
+Sample Output:
+Convert All The Strings To Title Caps In A String Array
+
+1.Regular Function:
+function titleCaps(arr) {
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	return arr.join(' ');
+}
+let result=titleCaps("convert all the strings to title caps in a string array")
+console.log(result);
+
+2.IIFE:
+(function titleCaps(arr) {
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	console.log(arr.join(' ')) ;
+})("convert all the strings to title caps in a string array")
+3.Arrow Function:
+let titleCaps=(arr) =>{
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	console.log( arr.join(' '));
+}
+titleCaps("convert all the strings to title caps in a string array")
+
+c.Sum of all numbers in an array
+Sample Input:
+[1,2,3,4,5,6,7]
+Sample Output:
+28
+
+1.Regular Function:
+function titleCaps(arr){
+    let sum=0
+	for(i=0;i<arr.length;i++){
+        sum +=arr[i]
+    }
+    console.log(sum)
+}
+titleCaps([1,2,3,4,5,6,7])
+
+2.IIFE:
+(function titleCaps(arr){
+    let sum=0
+	for(i=0;i<arr.length;i++){
+        sum +=arr[i]
+    }
+    console.log(sum)
+})([1,2,3,4,5,6,7])
+
+3.Arrow Function:
+let titleCaps=(arr) =>{
+    let sum=0
+	for(i=0;i<arr.length;i++){
+        sum +=arr[i]
+    }
+    console.log(sum)
+}
+titleCaps([1,2,3,4,5,6,7])
+
+d.Return all the prime numbers in an array
+Sample Input:
+[1,2,3,4,5,6,7]
+Sample Output:
+[ 2, 3, 5, 7 ]
+
+1.Regular Function:
+function primeNumber(array) {
+    function isPrime(number) {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  
+    return array.filter((number) => isPrime(number));
+  }
+  
+  // Example usage
+  var arr = [1, 2, 3, 4, 5, 6, 7];
+  var result = primeNumber(arr);
+  
+  console.log(result);
+ 
+2.IIFE:
+ const result = (function(array) {
+    function primeNumber(number) {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  
+    return array.filter((number) => primeNumber(number));
+  })([1, 2, 3, 4, 5, 6, 7]);
+  
+  console.log(result);
+  
+3.Arrow Function:
+  var result = ((array) => {
+    var primeNumber = (number) => {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    };
+  
+    return array.filter((number) => primeNumber(number));
+  })([1, 2, 3, 4, 5, 6, 7]);
+  
+  console.log(result);
+  
+e.Return all the palindromes in an array
+Sample Input:
+["abc", "aba", "dad", "bbc", "cbc"]
+Sample Output:
+[ 'aba', 'dad', 'cbc' ]
+
+1.Regular Function:
+const PalindromStrings = (function(arr, N) {
+  function isPalindrome(s) {
+    let a = s;
+    s = s.split("").reverse().join("");
+    return s === a;
+  }
+
+  let ans = [];
+  for (let i = 0; i < N; i++) {
+    if (isPalindrome(arr[i])) {
+      ans.push(arr[i]);
+    }
+  }
+  return ans;
+})(["abc", "aba", "dad", "bbc", "cbc"], 5);
+
+console.log(PalindromStrings);
+
+
+2.IIFE:
+const PalindromStrings = ((arr, N) => {
+  const isPalindrome = (s) => {
+    let a = s;
+    s = s.split("").reverse().join("");
+    return s === a;
+  };
+
+  let ans = [];
+  for (let i = 0; i < N; i++) {
+    if (isPalindrome(arr[i])) {
+      ans.push(arr[i]);
+    }
+  }
+  return ans;
+})(["abc", "aba", "dad", "bbc", "cbc"], 5);
+
+console.log(PalindromStrings);
+
+3.Arrow Function:
+const PalindromStrings = ((arr, N) => {
+  const isPalindrome = s => {
+    let a = s;
+    s = s.split("").reverse().join("");
+    return s === a;
+  };
+
+  let ans = [];
+  for (let i = 0; i < N; i++) {
+    if (isPalindrome(arr[i])) {
+      ans.push(arr[i]);
+    }
+  }
+  return ans;
+})(["abc", "aba", "dad", "bbc", "cbc"], 5);
+
+console.log(PalindromStrings);
+
+Return median of two sorted arrays of the same size
+
+Sample Input:
+nums1 = [1, 2, 3];
+nums2 = [4, 5, 6];
+Sample Output:
+3.5
+
+1.Regular Function:
+function medianFind(nums1, nums2) {
+  var arr = [...nums1, ...nums2].sort((a, b) => a - b);
+  var n = arr.length;
+  if (n % 2 === 0) {
+    var mid1 = n / 2 - 1;
+    var mid2 = n / 2;
+    return (arr[mid1] + arr[mid2]) / 2;
+  } else {
+    var mid = Math.floor(n / 2);
+    return arr[mid];
+  }
+}
+var nums1 = [1, 2, 3];
+var nums2 = [4, 5, 6];
+var median = medianFind(nums1, nums2);
+console.log(median);
+
+2.IIFE:
+const medianFind = (function(nums1, nums2) {
+  var arr = [...nums1, ...nums2].sort((a, b) => a - b);
+  var n = arr.length;
+  if (n % 2 === 0) {
+    var mid1 = n / 2 - 1;
+    var mid2 = n / 2;
+    return (arr[mid1] + arr[mid2]) / 2;
+  } else {
+    var mid = Math.floor(n / 2);
+    return arr[mid];
+  }
+})([1, 2, 3], [4, 5, 6]);
+
+console.log(median);
+
+3.Arrow Function:
+const medianFind = ((nums1, nums2) => {
+  const arr = [...nums1, ...nums2].sort((a, b) => a - b);
+  const n = arr.length;
+
+  return n % 2 === 0
+    ? (arr[n / 2 - 1] + arr[n / 2]) / 2
+    : arr[Math.floor(n / 2)];
+})([1, 2, 3], [4, 5, 6]);
+
+console.log(medianFind);
+
+g.Remove duplicates from an array
+
+Sample Input:
+[6, 4, 6, 3, 4, 1, 5]
+Sample Output:
+[ 6, 4, 3, 1, 5 ]
+
+1.Regular Function:
+function removeDuplicates(arr) {
+  const result = [];
+  for (const value of arr) {
+    if (!result.includes(value)) {
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+const arr = [6, 4, 6, 3, 4, 1, 5];
+const resultArray = removeDuplicates(arr);
+console.log(resultArray);
+
+2.IIFE:
+const arr = [6, 4, 6, 3, 4, 1, 5];
+const resultArray = (function(arr) {
+  const result = [];
+  for (const value of arr) {
+    if (!result.includes(value)) {
+      result.push(value);
+    }
+  }
+  return result;
+})(arr);
+
+console.log(resultArray);
+
+3.Arrow Function:
+const arr = [6, 4, 6, 3, 4, 1, 5];
+const resultArray = ((arr) => {
+  const result = [];
+  for (const value of arr) {
+    if (!result.includes(value)) {
+      result.push(value);
+    }
+  }
+  return result;
+})(arr);
+
+console.log(resultArray);
+
+h.Rotate an array by k times
+
+Sample Input:
+1, 2, 3, 4, 5], 3
+Sample Output:
+[ 3, 4, 5, 1, 2 ]
+
+1.Regular Function:
+function rotateArray(arr, k) {
+    const n = arr.length;
+    k = k % n; 
+    const rotatedPart = arr.splice(n - k);
+    arr.unshift(...rotatedPart); 
+    return arr;
+  }
+  const arr = [1, 2, 3, 4, 5];
+  const rotate = 3; 
+  const result = rotateArray(arr, rotate);
+  console.log(result);
+  
+2.IIFE:
+const result = ((arr, k) => {
+  const n = arr.length;
+  k = k % n;
+  const rotatedPart = arr.splice(n - k);
+  arr.unshift(...rotatedPart);
+  return arr;
+})([1, 2, 3, 4, 5], 3);
+
+console.log(result);
+
+3.Arrow Function:
+const result = ((arr, k) => {
+  const n = arr.length;
+  k = k % n;
+  const rotatedPart = arr.splice(n - k);
+  arr.unshift(...rotatedPart);
+  return arr;
+})([1, 2, 3, 4, 5], 3);
+
+console.log(result);
